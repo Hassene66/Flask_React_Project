@@ -25,6 +25,7 @@ function HomePage() {
       })
         .then((response) => response.json())
         .then((data) => setProducts(data));
+      setCurrentPage(1);
     }
   }, [Submitted]);
   console.log("data : ", Products);
@@ -54,7 +55,6 @@ function HomePage() {
             <div className="row align-items-center">
               <div className="col-lg-3 col-sm-4 col-md-4 col-5">
                 <a href="#" className="brand-wrap" data-abc="true">
-                  {/* <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> */}{" "}
                   <span className="logo">BestDeals</span>
                 </a>
               </div>
@@ -89,10 +89,12 @@ function HomePage() {
       </header>
 
       <div className="container ">
-        <ProductsComponent products={currentProducts} />
         <div>
-          <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
+          <ProductsComponent products={currentProducts} />
         </div>
+        {howManyPages ? (
+          <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
+        ) : null}
       </div>
     </>
   );

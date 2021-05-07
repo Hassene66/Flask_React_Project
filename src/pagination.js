@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Pagination({ pages = 10, setCurrentPage }) {
   //Set number of pages
+  console.log("how many pages : ", pages);
   const numberOfPages = [];
   for (let i = 1; i <= pages; i++) {
     numberOfPages.push(i);
@@ -58,7 +59,7 @@ function Pagination({ pages = 10, setCurrentPage }) {
 
     setArrOfCurrButtons(tempNumberOfPages);
     setCurrentPage(currentButton);
-  }, [currentButton]);
+  }, [currentButton, pages]);
 
   return (
     <span className="pagination-container mb-4">

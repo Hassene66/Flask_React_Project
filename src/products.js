@@ -1,11 +1,15 @@
 import React from "react";
+import mercado from "./sites logos/mercado.jpg";
+import tunisianet from "./sites logos/tunisianet.jpg";
+import jumia from "./sites logos/jumia.jpg";
+import savanna from "./sites logos/savanna.jpg";
 import "./products.css";
 function ProductsComponent({ products }) {
   return (
     <div>
       <div className="container mt-5 mb-5">
         <div className="d-flex justify-content-center row">
-          <div className="col-md-10">
+          <div className="col-md-12 col-lg-10">
             {products.map((el, idx) => (
               <div key={idx} className="row p-2 bg-white border rounded my-3">
                 <div className="col-md-3 mt-1">
@@ -55,20 +59,41 @@ function ProductsComponent({ products }) {
                   </p>
                 </div>
                 <div className="align-items-center align-content-center col-md-3 border-left mt-1">
-                  <div className="d-flex flex-row align-items-center">
-                    <h4 className="mr-1">
+                  <div className="text-center">
+                    <h4 className="text-nowrap my-1">
                       {el.prix_actuel ? el.prix_actuel : el.prix_initiale}
                     </h4>
-                    <span className="strike-text">{el.prix_initiale}</span>
+
+                    <div className=" d-flex align-items-start flex-column">
+                      <span className="strike-text  m-auto">
+                        {el.prix_actuel && el.prix_initiale
+                          ? el.prix_initiale
+                          : null}
+                      </span>
+                    </div>
                   </div>
-                  <h6 className="text-success">Free shipping</h6>
                   <div className="d-flex flex-column mt-4">
-                    <button className="btn btn-primary btn-sm" type="button">
-                      Details
-                    </button>
+                    <img
+                      className="img-fluid img-responsive rounded product-image"
+                      style={{
+                        width: "60%",
+                        margin: "auto",
+                      }}
+                      src={
+                        el.site == "Mercado"
+                          ? mercado
+                          : el.site == "Tunisianet"
+                          ? tunisianet
+                          : el.site == "Jumia"
+                          ? jumia
+                          : el.site == "Savanna"
+                          ? savanna
+                          : null
+                      }
+                    />
                     <a
                       href={el.url}
-                      className="btn btn-outline-primary btn-sm mt-2"
+                      className="btn btn-outline-primary btn-sm mt-4"
                       target="_blank"
                     >
                       Product Link
