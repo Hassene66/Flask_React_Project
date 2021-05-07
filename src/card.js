@@ -22,7 +22,9 @@ function card({ products }) {
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title">{el.titre}</h5>
-                <p className="card-text">prix : {el.prix_actuel}</p>
+                <p className="card-text">
+                  prix : {el.prix_actuel ? el.prix_actuel : el.prix_initiale}
+                </p>
                 <p className="card-text">
                   <strong>Site : {el.site}</strong>
                 </p>

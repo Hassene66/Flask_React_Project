@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card";
+import "./navbar.css";
+import ProductsComponent from "./products";
 import Pagination from "./pagination";
 import "./Pagination.css";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function HomePage() {
   const [Products, setProducts] = useState([]);
   const [input, setInput] = useState("");
@@ -33,36 +37,59 @@ function HomePage() {
     setSubmitted(Submitted + 1);
   }
 
-  console.log("Input : ", input);
   const indexOfLastPost = currentPage * ProductsPerPage;
   const indexOfFirstPost = indexOfLastPost - ProductsPerPage;
   const currentProducts = Products.slice(indexOfFirstPost, indexOfLastPost);
   const howManyPages = Math.ceil(Products.length / ProductsPerPage);
+
+  console.log("indexOfLastPost : ", indexOfLastPost);
+  console.log("indexOfFirstPost : ", indexOfFirstPost);
+  console.log("currentProducts : ", currentProducts);
+  console.log("howManyPages : ", howManyPages);
   return (
     <>
-      <header className="mb-5">
-        <nav className="navbar navbar-dark bg-dark">
-          <a className="navbar-brand">Best Price</a>
-          <form
-            className="form-inline my-2 my-lg-0"
-            onSubmit={(e) => onSubmit(e)}
-          >
-            <input
-              className="form-control mr-sm-2"
-              type="text"
-              placeholder="Search"
-              name="searchField"
-              onChange={(e) => onChange(e)}
-            />
-            <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-        </nav>
+      <header className="section-header">
+        <section className="header-main border-bottom">
+          <div className="container-fluid">
+            <div className="row align-items-center">
+              <div className="col-lg-3 col-sm-4 col-md-4 col-5">
+                <a href="#" className="brand-wrap" data-abc="true">
+                  {/* <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> */}{" "}
+                  <span className="logo">BestDeals</span>
+                </a>
+              </div>
+              <div className="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+                <form
+                  action="#"
+                  className="search-wrap"
+                  onSubmit={(e) => onSubmit(e)}
+                >
+                  <div className="input-group w-100">
+                    <input
+                      onChange={(e) => onChange(e)}
+                      type="text"
+                      className="form-control search-form"
+                      style={{ width: "55%" }}
+                      placeholder="chercher des produits"
+                    />
+                    <div className="input-group-append">
+                      <button
+                        className="btn btn-primary search-button"
+                        type="submit"
+                      >
+                        <FontAwesomeIcon icon={faSearch} />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </header>
 
       <div className="container ">
-        <Card products={currentProducts} />
+        <ProductsComponent products={currentProducts} />
         <div>
           <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
         </div>

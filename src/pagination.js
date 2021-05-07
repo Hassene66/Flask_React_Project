@@ -61,7 +61,7 @@ function Pagination({ pages = 10, setCurrentPage }) {
   }, [currentButton]);
 
   return (
-    <div className="pagination-container">
+    <span className="pagination-container mb-4">
       <a
         href="#"
         className={`${currentButton === 1 ? "disabled" : ""}`}
@@ -98,7 +98,7 @@ function Pagination({ pages = 10, setCurrentPage }) {
       >
         Next
       </a>
-    </div>
+    </span>
   );
 }
 
