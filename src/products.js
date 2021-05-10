@@ -7,7 +7,7 @@ import "./products.css";
 function ProductsComponent({ products }) {
   return (
     <div>
-      <div className="container mt-5 mb-5">
+      <div id="prd" className="container mt-5 mb-5">
         <div className="d-flex justify-content-center row">
           <div className="col-md-12 col-lg-10">
             {products.map((el, idx) => (
@@ -93,7 +93,7 @@ function ProductsComponent({ products }) {
                     />
                     <a
                       href={el.url}
-                      className="btn btn-outline-primary btn-sm mt-4"
+                      className="btn btn-outline-danger btn-sm mt-4 font-weight-bold"
                       target="_blank"
                     >
                       Product Link

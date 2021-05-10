@@ -6,35 +6,53 @@ import Pagination from "./pagination";
 import "./Pagination.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function HomePage() {
+function HomePage(props = null) {
   const [Products, setProducts] = useState([]);
   const [input, setInput] = useState("");
   const [Submitted, setSubmitted] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [ProductsPerPage] = useState(10);
+
   useEffect(() => {
-    if (input !== "") {
-      console.log("inside fetch :", input);
+    if (props != null) {
+      setInput(props.location.state.userInput);
       fetch("/product", {
         method: "POST",
         cache: "no-cache",
         headers: {
           content_type: "application/json",
         },
-        body: JSON.stringify(input),
+        body: JSON.stringify(props.location.state.userInput),
       })
         .then((response) => response.json())
         .then((data) => setProducts(data));
       setCurrentPage(1);
+    } else {
+      console.log("inside decond fetch");
+      if (input !== "") {
+        fetch("/product", {
+          method: "POST",
+          cache: "no-cache",
+          headers: {
+            content_type: "application/json",
+          },
+          body: JSON.stringify(input),
+        })
+          .then((response) => response.json())
+          .then((data) => setProducts(data));
+        setCurrentPage(1);
+      }
     }
   }, [Submitted]);
   console.log("data : ", Products);
+  console.log("input: ", input);
   function onChange(e) {
     e.preventDefault();
     setInput({ ...input, input: e.target.value });
   }
   function onSubmit(e) {
     e.preventDefault();
+    props.location.state.userInput = input;
     setSubmitted(Submitted + 1);
   }
 
@@ -74,7 +92,7 @@ function HomePage() {
                     />
                     <div className="input-group-append">
                       <button
-                        className="btn btn-primary search-button"
+                        className="btn btn-danger search-button"
                         type="submit"
                       >
                         <FontAwesomeIcon icon={faSearch} />
@@ -88,7 +106,7 @@ function HomePage() {
         </section>
       </header>
 
-      <div className="container ">
+      <div className="container d-flex flex-column min-vh-100 ">
         <div>
           <ProductsComponent products={currentProducts} />
         </div>

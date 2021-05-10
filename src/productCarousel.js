@@ -1,6 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./productCarousel.css";
 const ProductCarousel = () => {
+  const history = useHistory();
+
   return (
     <div id="productCarousel" className=" mt-4 container mt-100">
       <div className="row">
@@ -21,9 +24,17 @@ const ProductCarousel = () => {
               <h4 className="card-title">Pc Portable</h4>
               <p className="text-muted">A partir de 500 DT</p>
               <a
-                className="btn btn-outline-primary btn-sm"
+                className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
+                onClick={() =>
+                  history.push({
+                    pathname: "/products",
+                    state: {
+                      userInput: "pc",
+                    },
+                  })
+                }
               >
                 View Products
               </a>
@@ -47,7 +58,7 @@ const ProductCarousel = () => {
               <h4 className="card-title">SmartPhone</h4>
               <p className="text-muted">A partir de 200 DT</p>
               <a
-                className="btn btn-outline-primary btn-sm"
+                className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
               >
@@ -73,7 +84,7 @@ const ProductCarousel = () => {
               <h4 className="card-title">Accessoire</h4>
               <p className="text-muted"> A partir de 9 DT</p>
               <a
-                className="btn btn-outline-primary btn-sm"
+                className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
               >

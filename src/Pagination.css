@@ -1,4 +1,4 @@
-.pagination-container {
+#pgn .pagination-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     font-size: 15px;
   }
   
-  .pagination-container a {
+  #pgn .pagination-container a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,13 +23,13 @@
     
   }
   
-  .pagination-container a.active {
-    background-color: #007bff;
+  #pgn .pagination-container a.active {
+    background-color: #414149;
     color: white;
-    border: 1px solid #7cbddb;
+    border: 1px solid #505355;
   }
   
-  .pagination-container a.disabled { 
+  #pgn .pagination-container a.disabled { 
     opacity: 0.2;
   }
-  .pagination-container a:hover:not(.active) {background-color: #007bff; color:white}
+  #pgn .pagination-container a:hover:not(.active) {background-color: #727375; color:white}
