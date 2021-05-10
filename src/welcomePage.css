@@ -1,0 +1,53 @@
+#welcomePage body {
+  background-color: #6200ea;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+#welcomePage button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none;
+  outline-width: 0;
+}
+
+#welcomePage .card {
+  border-radius: 10px;
+  border: none;
+  background-color: #ffb74d;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#welcomePage .left-side {
+  height: 100%;
+}
+
+#welcomePage .btn-pink {
+  background: #ff5252;
+  font-size: 16px;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #ff5252;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+#welcomePage .btn-pink:hover {
+  background: #f44336;
+  color: #fff;
+}
+
+#welcomePage .fit-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+#welcomePage .boy-img {
+  height: 320px;
+  width: 360px;
+}

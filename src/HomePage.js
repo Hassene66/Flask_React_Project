@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./card";
+import Footer from "./footer";
 import "./navbar.css";
 import ProductsComponent from "./products";
 import Pagination from "./pagination";
@@ -54,7 +54,7 @@ function HomePage() {
           <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col-lg-3 col-sm-4 col-md-4 col-5">
-                <a href="#" className="brand-wrap" data-abc="true">
+                <a href="/" className="brand-wrap" data-abc="true">
                   <span className="logo">BestDeals</span>
                 </a>
               </div>
@@ -96,6 +96,7 @@ function HomePage() {
           <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
         ) : null}
       </div>
+      <Footer />
     </>
   );
 }

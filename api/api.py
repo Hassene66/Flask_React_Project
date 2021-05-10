@@ -16,10 +16,12 @@ def get_current_time():
         '$search': {
             'text': {
                 'query': f"{query}", 
-                'path': 'titre'
+                'path': 'titre',
             }
         }
-    }
+    },
+    
+{ '$sort': { 'score': { '$meta': "textScore" } } }
 ])
     return dumps(output)
   
