@@ -14,7 +14,7 @@ const Carousel = () => {
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-md-7 col-12 order-md-1 order-2">
-                  <h4>iPhone XS</h4>
+                  <h4>Hp pavillion</h4>
                   <p>
                     This has many features that are simply awesome. The phone
                     comes with a 3.50-inch display with a resolution of 320x480

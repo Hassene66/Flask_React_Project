@@ -27,14 +27,15 @@ const ProductCarousel = () => {
                 className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
-                onClick={() =>
+                onClick={(e) => {
+                  e.preventDefault();
                   history.push({
                     pathname: "/products",
                     state: {
-                      userInput: "pc",
+                      userInput: "pc i7",
                     },
-                  })
-                }
+                  });
+                }}
               >
                 View Products
               </a>
@@ -61,6 +62,15 @@ const ProductCarousel = () => {
                 className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push({
+                    pathname: "/products",
+                    state: {
+                      userInput: "samsung smartphone",
+                    },
+                  });
+                }}
               >
                 View Products
               </a>
@@ -87,6 +97,15 @@ const ProductCarousel = () => {
                 className="text-white btn btn-danger btn-sm"
                 href="#"
                 data-abc="true"
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push({
+                    pathname: "/products",
+                    state: {
+                      userInput: "pc",
+                    },
+                  });
+                }}
               >
                 View Products
               </a>
