@@ -9,12 +9,14 @@ CORS(app)
 client = pymongo.MongoClient(
         "mongodb+srv://ProjectDB:Project2020@cluster0.mnrih.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 prod=client.Scraping_Project.Products
-@app.errorhandler(404)
-def not_found(e):
-    return app.send_static_file('index.html')
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
 @ app.route('/api/product',methods = ['POST'])
 def get_current_time():
     query=request.json
