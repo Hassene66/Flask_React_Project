@@ -18,7 +18,7 @@ function HomePage(props = null) {
   useEffect(() => {
     if (props != undefined) {
       setInput(props.location.state.userInput);
-      fetch("/product", {
+      fetch("/api/product", {
         method: "POST",
         cache: "no-cache",
         headers: {
@@ -33,7 +33,7 @@ function HomePage(props = null) {
     } else {
       console.log("inside decond fetch");
       if (input != "") {
-        fetch("/product", {
+        fetch("/api/product", {
           method: "POST",
           cache: "no-cache",
           headers: {
