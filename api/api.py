@@ -2,6 +2,7 @@ from flask import Flask,request
 import pymongo
 from flask_cors import CORS
 from bson.json_util import dumps
+import os
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 app.debug = True
 CORS(app)
