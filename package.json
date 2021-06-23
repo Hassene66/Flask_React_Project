@@ -21,7 +21,7 @@
   },
   "scripts": {
     "client": "react-scripts start",
-    "server": "cd api && venv\\Scripts\\flask run ",
+    "server": "cd api && flask run ",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

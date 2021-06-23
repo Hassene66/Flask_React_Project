@@ -1,7 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./carousel.css";
 import "../node_modules/bootstrap/js/dist/carousel.js";
 const Carousel = () => {
+  const history = useHistory();
   return (
     <div
       id="myCarousel"
@@ -16,11 +18,24 @@ const Carousel = () => {
                 <div class="col-md-7 col-12 order-md-1 order-2">
                   <h4>Hp pavillion</h4>
                   <p>
-                    This has many features that are simply awesome. The phone
-                    comes with a 3.50-inch display with a resolution of 320x480
-                    pixels.
+                    Profiter du graphisme ultra-réaliste avec la technologie
+                    Dolby Vision.
                   </p>{" "}
-                  <br /> <a href="#">BUY NOW</a>
+                  <br />{" "}
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      history.push({
+                        pathname: "/products",
+                        state: {
+                          userInput: "hp pavilion pc 15",
+                        },
+                      });
+                    }}
+                    href="#"
+                  >
+                    Consultez maintenant
+                  </a>
                 </div>
                 <div class="col-md-5 col-12 order-md-2 order-1">
                   <img
@@ -38,13 +53,27 @@ const Carousel = () => {
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-md-7 col-12 order-md-1 order-2">
-                  <h4>HP Pavillion</h4>
+                  <h4>HP OMEN</h4>
                   <p>
-                    This has many features that are simply awesome.The phone
-                    comes with a 3.50-inch display with a resolution of 320x480
-                    pixels.
+                    Grâce au PC portable HP Omen 15-dh1006nk, vous aurez à votre
+                    disposition des conditions de jeu optimales pour surpasser
+                    vos adversaire
                   </p>{" "}
-                  <br /> <a href="#">BUY NOW</a>
+                  <br />{" "}
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      history.push({
+                        pathname: "/products",
+                        state: {
+                          userInput: "Pc portable HP Omen 15",
+                        },
+                      });
+                    }}
+                    href="#"
+                  >
+                    Consultez maintenant
+                  </a>
                 </div>
                 <div class="col-md-5 col-12 order-md-2 order-1">
                   <img

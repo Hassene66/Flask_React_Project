@@ -37,7 +37,7 @@ const ProductCarousel = () => {
                   });
                 }}
               >
-                View Products
+                Voir produits
               </a>
             </div>
           </div>
@@ -72,7 +72,7 @@ const ProductCarousel = () => {
                   });
                 }}
               >
-                View Products
+                Voir produits
               </a>
             </div>
           </div>
@@ -107,7 +107,7 @@ const ProductCarousel = () => {
                   });
                 }}
               >
-                View Products
+                Voir produits
               </a>
             </div>
           </div>

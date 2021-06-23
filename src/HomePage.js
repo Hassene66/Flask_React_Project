@@ -8,44 +8,78 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import IMG from "./images/logo.png";
-function HomePage(props = null) {
+
+function HomePage(props = undefined) {
+  console.log("props value : ", props.location.state == undefined);
   const [Products, setProducts] = useState([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(" ");
   const [Submitted, setSubmitted] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [ProductsPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
+  const isFirstUpdate = React.useRef(true);
   useEffect(() => {
-    if (props != undefined) {
-      setInput(props.location.state.userInput);
-      fetch("/api/product", {
-        method: "POST",
-        cache: "no-cache",
-        headers: {
-          content_type: "application/json",
-        },
-        body: JSON.stringify(props.location.state.userInput),
-      })
-        .then((response) => response.json())
-        .then((data) => setProducts(data))
-        .then(() => setLoading(false));
-      setCurrentPage(1);
-    } else {
-      console.log("inside decond fetch");
-      if (input != "") {
+    if (isFirstUpdate.current) {
+      console.log("inside first fetch");
+      isFirstUpdate.current = false;
+      if (props.location.state == undefined) {
         fetch("/api/product", {
           method: "POST",
           cache: "no-cache",
           headers: {
             content_type: "application/json",
           },
-          body: JSON.stringify(input),
+          body: JSON.stringify(" "),
         })
           .then((response) => response.json())
           .then((data) => setProducts(data))
           .then(() => setLoading(false));
         setCurrentPage(1);
+        setInput(" ");
+      } else {
+        if (props.location.state.userInput != undefined) {
+          setInput(props.location.state.userInput);
+          fetch("/api/product", {
+            method: "POST",
+            cache: "no-cache",
+            headers: {
+              content_type: "application/json",
+            },
+            body: JSON.stringify(props.location.state.userInput),
+          })
+            .then((response) => response.json())
+            .then((data) => setProducts(data))
+            .then(() => setLoading(false));
+          setCurrentPage(1);
+        } else {
+          fetch("/api/product", {
+            method: "POST",
+            cache: "no-cache",
+            headers: {
+              content_type: "application/json",
+            },
+            body: JSON.stringify(" "),
+          })
+            .then((response) => response.json())
+            .then((data) => setProducts(data))
+            .then(() => setLoading(false));
+          setCurrentPage(1);
+        }
       }
+    } else {
+      console.log("inside second fetch");
+      fetch("/api/product", {
+        method: "POST",
+        cache: "no-cache",
+        headers: {
+          content_type: "application/json",
+        },
+        body: JSON.stringify(input),
+      })
+        .then((response) => response.json())
+        .then((data) => setProducts(data))
+        .then(() => setLoading(false));
+      setCurrentPage(1);
     }
   }, [Submitted]);
   console.log("data : ", Products);
@@ -57,7 +91,7 @@ function HomePage(props = null) {
   function onSubmit(e) {
     setLoading(true);
     e.preventDefault();
-    props.location.state.userInput = input;
+    setInput(input);
     setSubmitted(Submitted + 1);
   }
 

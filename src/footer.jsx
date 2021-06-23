@@ -13,7 +13,7 @@ const Footer = () => {
                     {" "}
                     <i class="fa fa-firefox text-light" aria-hidden="true"></i>
                   </span>
-                  <b> BestDeal</b>
+                  <b> Electro</b>
                 </h5>
               </div>
               <div class="col-sm-3 my-sm-0 mt-5">
@@ -43,7 +43,7 @@ const Footer = () => {
           <div class="col-12">
             <div class="row my-4 row-1 no-gutters">
               <div class="col-sm-3 col-auto text-center">
-                <small>&#9400; BestDeal Softwere</small>
+                <small>&#9400; Electro Softwere</small>
               </div>
               <div class="col-md-3 col-auto "></div>
               <div class="col-md-3 col-auto"></div>
@@ -51,7 +51,7 @@ const Footer = () => {
                 {" "}
                 <small>
                   {" "}
-                  BestDeal@gmail.com{" "}
+                  Electro@gmail.com{" "}
                   <span>
                     <img
                       src="https://i.imgur.com/TtB6MDc.png"

@@ -20,40 +20,16 @@ function ProductsComponent({ products }) {
                 </div>
                 <div className="col-md-6 mt-1">
                   <h5>{el.titre}</h5>
-                  <div className="d-flex flex-row">
-                    <div className="ratings mr-2">
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                    </div>
-                    <span>310</span>
-                  </div>
-                  <div className="mt-1 mb-1 spec-1">
-                    <span>100% cotton</span>
-                    <span className="dot" />
-                    <span>Light weight</span>
-                    <span className="dot" />
-                    <span>
-                      Best finish
-                      <br />
-                    </span>
-                  </div>
-                  <div className="mt-1 mb-1 spec-1">
-                    <span>Unique design</span>
-                    <span className="dot" />
-                    <span>For men</span>
-                    <span className="dot" />
-                    <span>
-                      Casual
-                      <br />
-                    </span>
-                  </div>
-                  <p className="text-justify text-truncate para mb-0">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or randomised words which don't
-                    look even slightly believable.
+                  <div className="d-flex flex-row"></div>
+                  <div className="mt-1 mb-1 spec-1"></div>
+                  <div className="mt-1 mb-1 spec-1"></div>
+                  <p className="text-justify  para mb-0">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
                     <br />
                     <br />
                   </p>
@@ -96,7 +72,7 @@ function ProductsComponent({ products }) {
                       className="btn btn-outline-danger btn-sm mt-4 font-weight-bold"
                       target="_blank"
                     >
-                      Product Link
+                      Lien Produit
                     </a>
                   </div>
                 </div>
