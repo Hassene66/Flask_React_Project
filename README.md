@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br/>
+  <img src="./screenshots/logo.svg" alt="IsammLabs" width="250"/></a>
+  <h4 align="center">A price tracking web application for </h4>
+  <br/>
+</h1>
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Python](https://img.shields.io/badge/React--native-0.69.2-orange)
+![Current Version](https://img.shields.io/badge/version-v1.0-blue)
+![GitHub contributors](https://img.shields.io/github/contributors/Hassene66/IsammLabs)
+![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+</div>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#basic-overview">Basic overview</a> •
+  <a href="#key-features">Key features</a> •
+  <a href="#technology-used">Technology used</a> •
+  <a href="#how-to-use">How to use</a> •
+  <a href="#project-overview">Project overview</a> •
+  <a href="#you-may-also-like">You may also like</a>
+  
+</p>
 
-### `npm start`
+## Basic overview
+The application's sole purpose is to keep track of the products price available on Tunisian e-commerce websites,then provide the user with the lowest price. An automated scraping script is used to provide the products data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Key features
+* Scraping popular tunisian e-commerce websites using Scrapy web-crawling framework 
+* Hosting scrapyd ( local scrapy spiders runner ) on heroku cloud 
+* Using Cron jobs to automate the daily scraping process.
+* Implemented 'atlas search' service to rank relevant search results. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technology used
 
-### `npm test`
+<p align="left">
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+      <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+    <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" />
+    <img src="https://img.shields.io/badge/express-%23000.svg?style=for-the-badge&logo=express&logoColor=white" />
+    <img src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white" />
+    <img src="https://img.shields.io/badge/firebase cloud messaging-%23ED8B00.svg?style=for-the-badge&logo=firebase&logoColor=white" />
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to use
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer and [Setting the development environment](https://reactnative.dev/docs/environment-setup).
+From your command line:
+```bash
+# Clone this repository
+$ git clone https://github.com/Hassene66/Flask_React_Project
 
-### `npm run build`
+# Go into the repository
+$ cd Flask_React_Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Install dependencies
+$ npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Run the app 
+$ npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| | | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="200" alt="splashscreen" src="./screenshots/s1.jpg"> |  <img width="200" alt="login screen" src="./screenshots/s6.jpg">|<img width="200" alt="unprocessed claims screen" src="./screenshots/s7.jpg">|<img width="200" alt="add claim form (first step)" src="./screenshots/s3.jpg">  |  <img width="200" alt="add claim form (second step)" src="./screenshots/s4.jpg">|<img width="200" alt="all ISAMM blocs screen" src="./screenshots/s2.jpg">|
+|<img width="200" alt="show computers stats" src="./screenshots/s9.jpg">  |  <img width="200" alt="add computer form" src="./screenshots/s8.jpg">|<img width="200" alt="add claim form (first step)" src="./screenshots/s10.jpg">|<img width="200" alt="teacher profile screen" src="./screenshots/s5.jpg">|
 
-## Learn More
+## You may also like
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [HiCoach](https://github.com/salimkazdaghli/Hicotech-Frontend) - A coaching web app.
+- [Tahi](https://github.dev/Hassene66/Tahi-Project) - A traditional food delivery mobile app.
